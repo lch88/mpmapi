@@ -1,4 +1,4 @@
-# `mpmapi`
+# mpmapi
 
 MoPub Publisher Management API Golang Client
 
