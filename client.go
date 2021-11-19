@@ -28,7 +28,7 @@ type Client struct {
 
 // NewClient returns a MoPub Publisher Management API Client with given API Key
 func NewClient(apiKey string) Manager {
-	return NewClientWithBaseURL(apiKey, "https://api.mopub.com/v1")
+	return NewClientWithBaseURL(apiKey, "https://api.mopub.com/v2")
 }
 
 // NewClientWithBaseURL returns a MoPub Publisher Management API Client with given API Key and base url
@@ -129,7 +129,7 @@ func (c Client) makeRawAPIRequest(path string, filter string, page int64) ([]byt
 	resp, err := client.R().
 		SetQueryParams(map[string]string{
 			"page":  strconv.FormatInt(page, 10),
-			"limit": "100",
+			"limit": "500",
 		}).
 		SetHeader("x-api-key", c.apiKey).
 		SetError(&ErrorResponse{}).
